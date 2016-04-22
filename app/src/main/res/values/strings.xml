@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Calculadora de probabilidad de oposiciones</string>
+    <string name="description">Con esta calculadora podrás saber qué probabilidad de que te toque un tema de los que te has estudiado en la oposición a la que te presentes.</string>
+    <string name="encourage">¡Ánimo y suerte!</string>
+    <string name="total">Temas totales</string>
+    <string name="taken">Temas a elegir</string>
+    <string name="studied">Temas estudiados</string>
+    <string name="calculate">Calcular</string>
+    <string name="explanation">Indica el número de:</string>
+    <string name="percentage_symbol">%</string>
+    <string name="percentage_temporal_number">100</string>
+</resources>
