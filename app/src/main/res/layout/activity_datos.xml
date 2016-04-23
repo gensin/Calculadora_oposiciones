@@ -30,7 +30,9 @@
         android:layout_above="@+id/taken_topics"
         android:layout_centerHorizontal="true"
         android:hint="@string/total"
-        android:textAlignment="center"/>
+        android:textAlignment="center"
+        android:inputType="number"
+        android:imeOptions="actionNext"/>
 
     <EditText
         android:id="@+id/taken_topics"
@@ -40,7 +42,9 @@
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:hint="@string/taken"
-        android:textAlignment="center"/>
+        android:textAlignment="center"
+        android:inputType="number"
+        android:imeOptions="actionNext"/>
 
     <EditText
         android:id="@+id/studied_topics"
@@ -50,7 +54,9 @@
         android:layout_below="@+id/taken_topics"
         android:layout_centerHorizontal="true"
         android:hint="@string/studied"
-        android:textAlignment="center"/>
+        android:textAlignment="center"
+        android:inputType="number"
+        android:imeOptions="actionSend"/>
 
     <Button
         android:id="@+id/calculate"
@@ -59,7 +65,5 @@
         android:text="@string/calculate"
         android:layout_below="@+id/studied_topics"
         android:layout_centerHorizontal="true" />
-
-
 
 </RelativeLayout>
