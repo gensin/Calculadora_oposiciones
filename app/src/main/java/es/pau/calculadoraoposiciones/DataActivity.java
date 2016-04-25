@@ -19,14 +19,10 @@ import java.util.Locale;
 
 public class DataActivity extends AppCompatActivity implements View.OnClickListener, TextWatcher {
 
-    public static final String TOTAL_TOPICS = "total topics";
-    public static final String TAKEN_TOPICS = "taken topics";
-    public static final String STUDIED_TOPICS = "studied topics";
-
     private static final String SHARED_PREFERENCES = "shared preferences";
-    private static final String TOTAL_SAVED = "total topics saved";
-    private static final String TAKEN_SAVED = "taken topics saved";
-    private static final String STUDIED_SAVED = "studied topics saved";
+    public static final String TOTAL_SAVED = "total topics saved";
+    public static final String TAKEN_SAVED = "taken topics saved";
+    public static final String STUDIED_SAVED = "studied topics saved";
 
     private EditText totalTopics;
     private EditText takenTopics;
@@ -45,17 +41,20 @@ public class DataActivity extends AppCompatActivity implements View.OnClickListe
 
         totalTopics = (EditText) findViewById(R.id.total_topics);
         if(prefs.contains(TOTAL_SAVED)){
-            totalTopics.setText(Integer.toString(prefs.getInt(TOTAL_SAVED,0)));
+            String totalSaved = Integer.toString(prefs.getInt(TOTAL_SAVED,0));
+            totalTopics.setText(totalSaved);
         }
 
         takenTopics = (EditText) findViewById(R.id.taken_topics);
         if(prefs.contains(TAKEN_SAVED)){
-            takenTopics.setText(Integer.toString(prefs.getInt(TAKEN_SAVED,0)));
+            String takenSaved = Integer.toString(prefs.getInt(TAKEN_SAVED,0));
+            takenTopics.setText(takenSaved);
         }
 
         studiedTopics = (EditText) findViewById(R.id.studied_topics);
         if(prefs.contains(STUDIED_SAVED)){
-            studiedTopics.setText(Integer.toString(prefs.getInt(STUDIED_SAVED,0)));
+            String studiedSaved = Integer.toString(prefs.getInt(STUDIED_SAVED,0));
+            studiedTopics.setText(studiedSaved);
         }
         studiedTopics.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
@@ -82,15 +81,15 @@ public class DataActivity extends AppCompatActivity implements View.OnClickListe
         SharedPreferences prefs = getSharedPreferences(SHARED_PREFERENCES, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
         editor.putInt(TOTAL_SAVED, Integer.parseInt(totalTopics.getText().toString()));
-        editor.putInt(TAKEN_SAVED, Integer.parseInt(totalTopics.getText().toString()));
-        editor.putInt(STUDIED_SAVED, Integer.parseInt(totalTopics.getText().toString()));
+        editor.putInt(TAKEN_SAVED, Integer.parseInt(takenTopics.getText().toString()));
+        editor.putInt(STUDIED_SAVED, Integer.parseInt(studiedTopics.getText().toString()));
         editor.apply();
 
         //Call to result activity
         Intent i = new Intent(this, ResultActivity.class);
-        i.putExtra(TOTAL_TOPICS, Integer.valueOf(totalTopics.getText().toString()));
-        i.putExtra(TAKEN_TOPICS, Integer.valueOf(takenTopics.getText().toString()));
-        i.putExtra(STUDIED_TOPICS, Integer.valueOf(studiedTopics.getText().toString()));
+        i.putExtra(TOTAL_SAVED, Integer.valueOf(totalTopics.getText().toString()));
+        i.putExtra(TAKEN_SAVED, Integer.valueOf(takenTopics.getText().toString()));
+        i.putExtra(STUDIED_SAVED, Integer.valueOf(studiedTopics.getText().toString()));
         startActivity(i);
     }
 
