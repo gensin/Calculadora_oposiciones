@@ -26,6 +26,16 @@
         android:textSize="50sp"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
+        android:paddingBottom="50dp"
+        android:visibility="invisible"/>
+
+    <ProgressBar
+        android:id="@+id/calculate_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:indeterminate="true"
         android:paddingBottom="50dp"/>
 
     <TextView
@@ -44,7 +54,8 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/recalculate"
         android:layout_centerHorizontal="true"
-        android:hint="@string/studied"/>
+        android:hint="@string/studied"
+        android:inputType="number"/>
 
     <Button
         android:id="@+id/recalculate"

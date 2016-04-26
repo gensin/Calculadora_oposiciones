@@ -19,10 +19,11 @@ import java.util.Locale;
 
 public class DataActivity extends AppCompatActivity implements View.OnClickListener, TextWatcher {
 
-    private static final String SHARED_PREFERENCES = "shared preferences";
+    public static final String SHARED_PREFERENCES = "shared preferences";
     public static final String TOTAL_SAVED = "total topics saved";
     public static final String TAKEN_SAVED = "taken topics saved";
     public static final String STUDIED_SAVED = "studied topics saved";
+    public static final String RESULT_SAVED = "percentage resulted saved";
 
     private EditText totalTopics;
     private EditText takenTopics;
@@ -83,6 +84,7 @@ public class DataActivity extends AppCompatActivity implements View.OnClickListe
         editor.putInt(TOTAL_SAVED, Integer.parseInt(totalTopics.getText().toString()));
         editor.putInt(TAKEN_SAVED, Integer.parseInt(takenTopics.getText().toString()));
         editor.putInt(STUDIED_SAVED, Integer.parseInt(studiedTopics.getText().toString()));
+        editor.remove(RESULT_SAVED);
         editor.apply();
 
         //Call to result activity
