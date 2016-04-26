@@ -46,7 +46,8 @@
         android:textSize="25sp"
         android:layout_alignBaseline="@+id/percentage"
         android:layout_alignBottom="@+id/percentage"
-        android:layout_toEndOf="@+id/recalculate" />
+        android:layout_toRightOf="@+id/percentage"
+        android:layout_toEndOf="@+id/percentage"/>
 
     <EditText
         android:id="@+id/new_topics"

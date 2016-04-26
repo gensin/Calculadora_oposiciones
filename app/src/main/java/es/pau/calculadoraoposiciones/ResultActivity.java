@@ -82,7 +82,7 @@ public class ResultActivity extends AppCompatActivity implements TextWatcher {
 
         calculationProgress.setVisibility(View.INVISIBLE);
         tvPercentage.setVisibility(View.VISIBLE);
-        String savedPercentageString = Float.toString(percentage);
+        String savedPercentageString = String.format("%.2f",percentage);
         tvPercentage.setText(savedPercentageString);
 
         SharedPreferences.Editor editor = prefs.edit();
