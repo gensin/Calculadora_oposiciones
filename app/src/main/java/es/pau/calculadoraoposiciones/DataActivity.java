@@ -3,6 +3,7 @@ package es.pau.calculadoraoposiciones;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
@@ -39,7 +40,6 @@ public class DataActivity extends AppCompatActivity implements View.OnClickListe
 
         calculateButton = (Button) this.findViewById(R.id.calculate);
 
-
         totalTopics = (EditText) findViewById(R.id.total_topics);
         if(prefs.contains(TOTAL_SAVED)){
             String totalSaved = Integer.toString(prefs.getInt(TOTAL_SAVED,0));
@@ -60,7 +60,7 @@ public class DataActivity extends AppCompatActivity implements View.OnClickListe
         studiedTopics.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if (actionId == EditorInfo.IME_ACTION_SEND) {
+                if (actionId == EditorInfo.IME_ACTION_GO) {
                     calculateButton.performClick();
                 }
                 return true;
@@ -99,20 +99,19 @@ public class DataActivity extends AppCompatActivity implements View.OnClickListe
         calculateButton.setEnabled(!TextUtils.isEmpty(totalTopics.getText())
                 && !TextUtils.isEmpty(takenTopics.getText())
                 && !TextUtils.isEmpty(studiedTopics.getText()));
-    }
-
-    @Override
-    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-    }
-
-    @Override
-    public void onTextChanged(CharSequence s, int start, int before, int count) {
-
+        if(calculateButton.isEnabled()){
+           calculateButton.setBackgroundColor(ContextCompat.getColor(DataActivity.this, R.color.colorPrimary));
+        } else {
+            calculateButton.setBackgroundColor(ContextCompat.getColor(DataActivity.this, R.color.colorPrimaryNotEnabled));
+        }
     }
 
     @Override
     public void afterTextChanged(Editable s) {
         setButtonEnable();
     }
+    @Override
+    public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+    @Override
+    public void onTextChanged(CharSequence s, int start, int before, int count) {}
 }

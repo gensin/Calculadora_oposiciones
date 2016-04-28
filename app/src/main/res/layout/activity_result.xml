@@ -56,7 +56,8 @@
         android:layout_above="@+id/recalculate"
         android:layout_centerHorizontal="true"
         android:hint="@string/studied"
-        android:inputType="number"/>
+        android:inputType="number"
+        android:imeOptions="actionGo"/>
 
     <Button
         android:id="@+id/recalculate"
@@ -64,6 +65,8 @@
         android:layout_height="wrap_content"
         android:text="@string/calculate"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorPrimary"
+        android:textColor="@android:color/white"/>
 
 </RelativeLayout>
