@@ -1,5 +1,5 @@
 # Calculadora oposiciones
-Una calculadora de oposiciones que calcula la posibilidad de que salga un tema de los que te has estudiado para tus oposiciones.
+Una aplicación Android que calcula la probabilidad de que salga un tema de los que te has estudiado para tus oposiciones.
 
 Pronto podrás descargarlo de la Play Store.
 
