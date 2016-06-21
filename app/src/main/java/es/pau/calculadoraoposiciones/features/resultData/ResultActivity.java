@@ -1,8 +1,7 @@
-package es.pau.calculadoraoposiciones;
+package es.pau.calculadoraoposiciones.features.resultData;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.os.AsyncTask;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -17,7 +16,9 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import static utils.CalculationUtils.probabilityPercentage;
+import es.pau.calculadoraoposiciones.CalculatePercentageAsyncTask;
+import es.pau.calculadoraoposiciones.R;
+import es.pau.calculadoraoposiciones.features.enterData.DataActivity;
 
 public class ResultActivity extends AppCompatActivity implements TextWatcher {
 

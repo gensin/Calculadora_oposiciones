@@ -1,4 +1,4 @@
-package es.pau.calculadoraoposiciones;
+package es.pau.calculadoraoposiciones.features.enterData;
 
 import android.content.Context;
 import android.content.Intent;
@@ -16,7 +16,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import java.util.Locale;
+import es.pau.calculadoraoposiciones.R;
+import es.pau.calculadoraoposiciones.features.resultData.ResultActivity;
 
 public class DataActivity extends AppCompatActivity implements View.OnClickListener, TextWatcher {
 
