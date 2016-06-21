@@ -18,7 +18,7 @@ import android.widget.TextView;
 
 import es.pau.calculadoraoposiciones.CalculatePercentageAsyncTask;
 import es.pau.calculadoraoposiciones.R;
-import es.pau.calculadoraoposiciones.features.enterData.DataActivity;
+import es.pau.calculadoraoposiciones.features.enterData.EnterData;
 
 public class ResultActivity extends AppCompatActivity implements TextWatcher {
 
@@ -34,9 +34,9 @@ public class ResultActivity extends AppCompatActivity implements TextWatcher {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 
-        total = getIntent().getIntExtra(DataActivity.TOTAL_SAVED,0);
-        taken = getIntent().getIntExtra(DataActivity.TAKEN_SAVED,0);
-        studied = getIntent().getIntExtra(DataActivity.STUDIED_SAVED,0);
+        total = getIntent().getIntExtra(EnterData.TOTAL_SAVED,0);
+        taken = getIntent().getIntExtra(EnterData.TAKEN_SAVED,0);
+        studied = getIntent().getIntExtra(EnterData.STUDIED_SAVED,0);
 
         calculationProgress = (ProgressBar) findViewById(R.id.calculate_progress);
         tvPercentage = (TextView) findViewById(R.id.percentage);
@@ -61,13 +61,13 @@ public class ResultActivity extends AppCompatActivity implements TextWatcher {
             }
         });
 
-        SharedPreferences prefs = getSharedPreferences(DataActivity.SHARED_PREFERENCES, Context.MODE_PRIVATE);
+        SharedPreferences prefs = getSharedPreferences(EnterData.SHARED_PREFERENCES, Context.MODE_PRIVATE);
 
         if(total==0 || taken == 0 || studied == 0){
             //TODO:Lanzar mensaje de aviso
             onBackPressed();
-        } else if(prefs.contains(DataActivity.RESULT_SAVED)) {
-            String savedPercentage = prefs.getString(DataActivity.RESULT_SAVED,"");
+        } else if(prefs.contains(EnterData.RESULT_SAVED)) {
+            String savedPercentage = prefs.getString(EnterData.RESULT_SAVED,"");
             writePercentage(savedPercentage);
         } else {
             calculate();
@@ -90,14 +90,14 @@ public class ResultActivity extends AppCompatActivity implements TextWatcher {
     }
 
     private void writePercentage(String percentage){
-        SharedPreferences prefs = getSharedPreferences(DataActivity.SHARED_PREFERENCES, Context.MODE_PRIVATE);
+        SharedPreferences prefs = getSharedPreferences(EnterData.SHARED_PREFERENCES, Context.MODE_PRIVATE);
 
         calculationProgress.setVisibility(View.INVISIBLE);
         tvPercentage.setVisibility(View.VISIBLE);
         tvPercentage.setText(percentage);
 
         SharedPreferences.Editor editor = prefs.edit();
-        editor.putString(DataActivity.RESULT_SAVED,percentage);
+        editor.putString(EnterData.RESULT_SAVED,percentage);
         editor.apply();
     }
 
