@@ -8,4 +8,12 @@ import org.webpartners.meigic.views.MeigicView;
 public interface ResultView extends MeigicView {
 
     void showLoading();
+
+    void hideLoading();
+
+    void showPercentage(String percentage);
+
+    void setButtonEnable(boolean isEnable);
+
+    void changeButtonColor(boolean isEnable);
 }
