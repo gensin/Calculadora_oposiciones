@@ -18,6 +18,9 @@ fun probabilityPercentage(total: Int, taken: Int, studied: Int): String {
     val p = 1-(dividend/divisor)
     val percentage = p * 100
    // return String.format(Locale.getDefault(), "%.2f", percentage)
+    if (percentage.isNaN()){
+        return "%.2f".format(0.0)
+    }
     return "%.2f".format(percentage)
 }
 
