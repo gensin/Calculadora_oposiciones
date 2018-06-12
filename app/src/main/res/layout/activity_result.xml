@@ -30,7 +30,7 @@
         android:visibility="invisible"/>
 
     <ProgressBar
-        android:id="@+id/calculate_progress"
+        android:id="@+id/calculateProgress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
@@ -50,7 +50,7 @@
         android:layout_toEndOf="@+id/percentage"/>
 
     <EditText
-        android:id="@+id/new_topics"
+        android:id="@+id/newTopics"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/recalculate"

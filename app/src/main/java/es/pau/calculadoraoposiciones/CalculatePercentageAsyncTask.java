@@ -1,9 +1,8 @@
 package es.pau.calculadoraoposiciones;
 
 import android.os.AsyncTask;
-import android.view.View;
 
-import static utils.CalculationUtils.probabilityPercentage;
+import static utils.CalculationUtilsKt.probabilityPercentage;
 
 /**
  * Created by Pau on 29/04/2016.
