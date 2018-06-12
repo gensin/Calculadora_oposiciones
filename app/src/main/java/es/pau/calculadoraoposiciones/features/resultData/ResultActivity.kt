@@ -8,24 +8,25 @@ import android.view.inputmethod.EditorInfo
 
 import es.pau.calculadoraoposiciones.R
 import es.pau.calculadoraoposiciones.features.enterData.DataActivity
+import es.pau.calculadoraoposiciones.features.prefs
 import kotlinx.android.synthetic.main.activity_result.*
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
-import utils.*
+import es.pau.calculadoraoposiciones.utils.*
 
 class ResultActivity : AppCompatActivity() {
-
-    private val total: Int = intent.getIntExtra(DataActivity.TOTAL_SAVED, 0)
-    private val taken: Int = intent.getIntExtra(DataActivity.TAKEN_SAVED, 0)
-    private val studied: Int = intent.getIntExtra(DataActivity.STUDIED_SAVED, 0)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_result)
 
+        val total: Int = intent.getIntExtra(DataActivity.TOTAL_SAVED, 0)
+        val taken: Int = intent.getIntExtra(DataActivity.TAKEN_SAVED, 0)
+        val studied: Int = intent.getIntExtra(DataActivity.STUDIED_SAVED, 0)
+
         recalculate.setOnClickListener {
             val newTopicsNumber = Integer.valueOf(newTopics.text.toString())
-            calculate(newTopicsNumber)
+            calculate(total, taken, newTopicsNumber)
         }
 
         newTopics.afterTextChanged { setButtonEnable()  }
@@ -40,11 +41,11 @@ class ResultActivity : AppCompatActivity() {
             //TODO:Lanzar mensaje de aviso
             onBackPressed()
 
-        } else if (containsPreference(DataActivity.RESULT_SAVED)) {
-            writePercentage(getStringPreference(DataActivity.RESULT_SAVED))
+        } else if (prefs.contains(prefs.RESULT_SAVED)) {
+            writePercentage(prefs.resultPref)
 
         } else {
-            calculate(studied)
+            calculate(total, taken, studied)
         }
 
         setButtonEnable()
@@ -55,7 +56,7 @@ class ResultActivity : AppCompatActivity() {
     }
 
 
-    private fun calculate(studied: Int) {
+    private fun calculate(total: Int, taken: Int, studied: Int) {
         showProgress(true)
         doAsync {
             val resultPercentage = probabilityPercentage(total, taken, studied)
@@ -70,7 +71,7 @@ class ResultActivity : AppCompatActivity() {
         showProgress(false)
         percentage.text = percentageText
 
-        putStringPreference(DataActivity.RESULT_SAVED, percentageText)
+        prefs.resultPref = percentageText
     }
 
     private fun showProgress(show: Boolean){

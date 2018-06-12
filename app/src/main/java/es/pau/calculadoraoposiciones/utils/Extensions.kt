@@ -1,7 +1,8 @@
-package utils
+package es.pau.calculadoraoposiciones.utils
 
 import android.content.Context
 import android.text.Editable
+import android.text.TextUtils
 import android.text.TextWatcher
 import android.widget.EditText
 import es.pau.calculadoraoposiciones.features.enterData.DataActivity
@@ -9,6 +10,8 @@ import es.pau.calculadoraoposiciones.features.enterData.DataActivity
 /**
  * Created on 12/06/18.
  */
+
+// Views
 fun EditText.afterTextChanged(afterTextChanged: (String) -> Unit) {
     this.addTextChangedListener(object : TextWatcher {
         override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
@@ -23,18 +26,14 @@ fun EditText.afterTextChanged(afterTextChanged: (String) -> Unit) {
     })
 }
 
-// Preferences
-fun Context.containsPreference(key: String): Boolean {
-    val prefs = getSharedPreferences(DataActivity.SHARED_PREFERENCES, Context.MODE_PRIVATE)
-    return prefs.contains(key)
+fun EditText.getTextAsInt(): Int{
+    try {
+        return Integer.parseInt(text.toString())
+    } catch (e: NumberFormatException){
+        return 0
+    }
 }
 
-fun Context.getStringPreference(key: String): String {
-    val prefs = getSharedPreferences(DataActivity.SHARED_PREFERENCES, Context.MODE_PRIVATE)
-    return prefs.getString(key,"")
-}
-
-fun Context.putStringPreference(key: String, data: String) {
-    val prefs = getSharedPreferences(DataActivity.SHARED_PREFERENCES, Context.MODE_PRIVATE)
-    prefs.edit().putString(key, data).apply()
+fun EditText.isEmpty(): Boolean {
+    return TextUtils.isEmpty(text)
 }

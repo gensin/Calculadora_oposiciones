@@ -1,8 +1,4 @@
-package utils
-
-import com.google.common.math.DoubleMath
-
-import java.util.Locale
+package es.pau.calculadoraoposiciones.utils
 
 /**
  * Created by Pau on 23/04/2016.
@@ -17,10 +13,17 @@ import java.util.Locale
  * @return probability of occurrence of a studied topic (by percentage) as string
  */
 fun probabilityPercentage(total: Int, taken: Int, studied: Int): String {
-    val percentage = 100 - 100 * (DoubleMath.factorial(total - studied)
-            * DoubleMath.factorial(total - taken)
-            / (DoubleMath.factorial(total)
-            * DoubleMath.factorial(total - studied - taken)))
+    val dividend = factorial(((total-studied).toDouble())) * factorial((total-taken).toDouble())
+    val divisor = factorial(total.toDouble()) * factorial((total-studied-taken).toDouble())
+    val p = 1-(dividend/divisor)
+    val percentage = p * 100
    // return String.format(Locale.getDefault(), "%.2f", percentage)
     return "%.2f".format(percentage)
+}
+
+fun factorial(num: Double): Double {
+        if (num >= 1)
+            return num * factorial(num - 1)
+        else
+            return 1.0
 }
