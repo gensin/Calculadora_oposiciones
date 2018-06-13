@@ -26,6 +26,8 @@ class ResultActivity : AppCompatActivity() {
 
         recalculate.setOnClickListener {
             val newTopicsNumber = Integer.valueOf(newTopics.text.toString())
+            prefs.studiedPref = newTopicsNumber
+            newTopics.hideKeyboard()
             calculate(total, taken, newTopicsNumber)
         }
 

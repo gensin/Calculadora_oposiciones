@@ -34,20 +34,22 @@ class DataActivity : AppCompatActivity() {
         setButtonEnable()
     }
 
+    override fun onResume() {
+        super.onResume()
+        studiedTopics.setText(prefs.studiedPref.toString())
+    }
+
     private fun initializeData() {
         if (prefs.contains(prefs.TOTAL_SAVED)) {
-            val totalSaved = Integer.toString(prefs.totalPref)
-            totalTopics.setText(totalSaved)
+            totalTopics.setText(prefs.totalPref.toString())
         }
 
         if (prefs.contains(prefs.TAKEN_SAVED)) {
-            val takenSaved = Integer.toString(prefs.takenPref)
-            takenTopics.setText(takenSaved)
+            takenTopics.setText(prefs.takenPref.toString())
         }
 
         if (prefs.contains(prefs.STUDIED_SAVED)) {
-            val studiedSaved = Integer.toString(prefs.studiedPref)
-            studiedTopics.setText(studiedSaved)
+            studiedTopics.setText(prefs.studiedPref.toString())
         }
     }
 
@@ -81,7 +83,6 @@ class DataActivity : AppCompatActivity() {
     }
 
     companion object {
-
         val TOTAL_SAVED = "total topics saved"
         val TAKEN_SAVED = "taken topics saved"
         val STUDIED_SAVED = "studied topics saved"
