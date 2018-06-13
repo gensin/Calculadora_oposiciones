@@ -7,6 +7,7 @@ import android.view.inputmethod.EditorInfo
 import es.pau.calculadoraoposiciones.R
 import es.pau.calculadoraoposiciones.features.prefs
 import es.pau.calculadoraoposiciones.features.resultData.ResultActivity
+import es.pau.calculadoraoposiciones.features.taketopics.TakeTopicsActivity
 import kotlinx.android.synthetic.main.activity_datos.*
 import es.pau.calculadoraoposiciones.utils.*
 
@@ -30,6 +31,10 @@ class DataActivity : AppCompatActivity() {
         totalTopics.afterTextChanged { setButtonEnable() }
         takenTopics.afterTextChanged { setButtonEnable() }
         studiedTopics.afterTextChanged { setButtonEnable() }
+
+        take.setOnClickListener {
+            startActivity(Intent(this, TakeTopicsActivity::class.java))
+        }
 
         setButtonEnable()
     }
@@ -74,7 +79,7 @@ class DataActivity : AppCompatActivity() {
             i.putExtra(STUDIED_SAVED, studiedNum)
             startActivity(i)
         } else {
-            TODO("mostrar error")
+            //TODO("mostrar error")
         }
     }
 

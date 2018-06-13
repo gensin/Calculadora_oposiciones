@@ -1,8 +1,9 @@
 package es.pau.calculadoraoposiciones.utils
 
 /**
- * Created by Pau on 23/04/2016.
- */
+* Created on 23/04/2016.
+*/
+
 /**
  * This function returns the probability of occurrence of a studied topic in a exam where
  * you have @total topics to studied you had studied @studied topics and you can choose from a
@@ -29,4 +30,16 @@ fun factorial(num: Double): Double {
             return num * factorial(num - 1)
         else
             return 1.0
+}
+
+fun takeRandomTopics(taken: Int, max : Int): ArrayList<Int> {
+    val takenList = ArrayList<Int>()
+    while (takenList.size == taken){
+        val random = (1..max).random()
+        if (!takenList.contains(random)) {
+            takenList.add(random)
+        }
+    }
+
+    return takenList
 }

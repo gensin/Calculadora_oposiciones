@@ -1,5 +1,6 @@
 package es.pau.calculadoraoposiciones.features.resultData
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
@@ -9,6 +10,7 @@ import android.view.inputmethod.EditorInfo
 import es.pau.calculadoraoposiciones.R
 import es.pau.calculadoraoposiciones.features.enterData.DataActivity
 import es.pau.calculadoraoposiciones.features.prefs
+import es.pau.calculadoraoposiciones.features.taketopics.TakeTopicsActivity
 import kotlinx.android.synthetic.main.activity_result.*
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
@@ -29,6 +31,11 @@ class ResultActivity : AppCompatActivity() {
             prefs.studiedPref = newTopicsNumber
             newTopics.hideKeyboard()
             calculate(total, taken, newTopicsNumber)
+        }
+
+        take.setOnClickListener {
+            startActivity(Intent(this, TakeTopicsActivity::class.java))
+            finish()
         }
 
         newTopics.afterTextChanged { setButtonEnable()  }
@@ -79,10 +86,10 @@ class ResultActivity : AppCompatActivity() {
     private fun showProgress(show: Boolean){
         if (show){
             percentage.visibility = View.INVISIBLE
-            calculateProgress.visibility = View.VISIBLE
+            calculateProgress.show()
         } else {
             percentage.visibility = View.VISIBLE
-            calculateProgress.visibility = View.INVISIBLE
+            calculateProgress.hide()
         }
     }
 }
