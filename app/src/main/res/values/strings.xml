@@ -9,4 +9,5 @@
     <string name="explanation">Indica el número de:</string>
     <string name="percentage_symbol" translatable="false">%</string>
     <string name="percentage_temporal_number" translatable="false">100</string>
+    <string name="take_topics">Saca temas</string>
 </resources>

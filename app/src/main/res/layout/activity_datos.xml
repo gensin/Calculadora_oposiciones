@@ -2,14 +2,14 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
                                              xmlns:app="http://schemas.android.com/apk/res-auto"
                                              xmlns:tools="http://schemas.android.com/tools"
+                                             android:id="@+id/relativeLayout"
                                              android:layout_width="match_parent"
                                              android:layout_height="match_parent"
                                              android:paddingBottom="@dimen/activity_vertical_margin"
                                              android:paddingLeft="@dimen/activity_horizontal_margin"
                                              android:paddingRight="@dimen/activity_horizontal_margin"
                                              android:paddingTop="@dimen/activity_vertical_margin"
-                                             tools:context=".features.enterData.DataActivity"
-                                             android:id="@+id/relativeLayout">
+                                             tools:context=".features.enterData.DataActivity">
 
     <TextView
         android:layout_width="0dp"
@@ -17,6 +17,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
         android:text="@string/description"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
@@ -26,61 +27,110 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/activity_vertical_margin"
         android:text="@string/explanation"
+        app:layout_constraintBottom_toTopOf="@+id/totalTopicsLayout"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/totalTopics"/>
+        app:layout_constraintRight_toRightOf="parent"/>
 
-    <EditText
-        android:id="@+id/totalTopics"
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/totalTopicsLayout"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/activity_vertical_margin"
-        android:hint="@string/total"
-        android:textAlignment="center"
-        android:inputType="number"
-        android:imeOptions="actionNext"
+        app:layout_constraintBottom_toTopOf="@+id/takenTopicsLayout"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/takenTopics"/>
+        app:layout_constraintRight_toRightOf="parent">
 
-    <EditText
-        android:id="@+id/takenTopics"
+        <EditText
+            android:id="@+id/totalTopics"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/total"
+            android:imeOptions="actionNext"
+            android:inputType="number"
+            android:singleLine="true"
+            android:textAlignment="center"
+            />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/takenTopicsLayout"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/activity_vertical_margin"
-        android:hint="@string/taken"
-        android:textAlignment="center"
-        android:inputType="number"
-        android:imeOptions="actionNext"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <EditText
-        android:id="@+id/studiedTopics"
+        <EditText
+            android:id="@+id/takenTopics"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/taken"
+            android:imeOptions="actionNext"
+            android:inputType="number"
+            android:singleLine="true"
+            android:textAlignment="center"
+            />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/studiedTopicsLayout"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/activity_vertical_margin"
-        android:hint="@string/studied"
-        android:textAlignment="center"
-        android:inputType="number"
-        android:imeOptions="actionGo"
         android:layout_marginTop="@dimen/activity_vertical_margin"
-        app:layout_constraintTop_toBottomOf="@+id/takenTopics"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/takenTopicsLayout">
+
+        <EditText
+            android:id="@+id/studiedTopics"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/studied"
+            android:imeOptions="actionGo"
+            android:inputType="number"
+            android:singleLine="true"
+            android:textAlignment="center"
+            />
+
+    </android.support.design.widget.TextInputLayout>
 
     <Button
         android:id="@+id/calculate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/calculate"
-        android:background="@drawable/button_background"
-        android:textColor="@android:color/white"
+        android:layout_marginBottom="8dp"
         android:layout_marginTop="@dimen/activity_vertical_margin"
-        app:layout_constraintTop_toBottomOf="@+id/studiedTopics"
+        android:background="@drawable/button_background"
+        android:padding="5dp"
+        android:text="@string/calculate"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/studiedTopicsLayout"
+        app:layout_constraintTop_toBottomOf="@+id/studiedTopicsLayout"
+        app:layout_constraintVertical_bias="0.25"/>
+
+    <Button
+        android:id="@+id/take"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:background="@drawable/button_background"
+        android:padding="5dp"
+        android:text="@string/take_topics"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/studiedTopicsLayout"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/studiedTopicsLayout"
+        app:layout_constraintVertical_bias="0.25"/>
 
 </android.support.constraint.ConstraintLayout>
