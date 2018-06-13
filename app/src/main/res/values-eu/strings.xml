@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Oposizioen kalkulagailua</string>
+    <string name="description">Kalkulagailu horrekin, zeure buruari aurkezten zaion oposizioan aztertu duzun arazoa zein den jakiteko gai izango zara.</string>
+    <string name="encourage">Ausardia eta zorte!</string>
+    <string name="total">Gai totalak</string>
+    <string name="taken">Aukeratutako gaiak</string>
+    <string name="studied">Ikasitako gaiak</string>
+    <string name="calculate">kalkulatu</string>
+    <string name="explanation">Adierazi zenbakia:</string>
+</resources>

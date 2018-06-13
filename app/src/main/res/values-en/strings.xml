@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Test calculator</string>
+    <string name="total">Total topics</string>
+    <string name="taken">Topics to choose</string>
+    <string name="studied">Studied topics</string>
+    <string name="calculate">Calculate</string>
+    <string name="explanation">Write the number of:</string>
+    <string name="encourage">Best luck!</string>
+    <string name="description">With this calculator you will know the probability do you have to take a topic you already studied.</string>
+</resources>
