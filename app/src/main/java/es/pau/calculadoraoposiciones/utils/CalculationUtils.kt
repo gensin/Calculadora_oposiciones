@@ -34,7 +34,7 @@ fun factorial(num: Double): Double {
 
 fun takeRandomTopics(taken: Int, max : Int): ArrayList<Int> {
     val takenList = ArrayList<Int>()
-    while (takenList.size == taken){
+    while (takenList.size < taken){
         val random = (1..max).random()
         if (!takenList.contains(random)) {
             takenList.add(random)

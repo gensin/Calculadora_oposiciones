@@ -84,7 +84,8 @@ class DataActivity : AppCompatActivity() {
     }
 
     private fun setButtonEnable() {
-        calculate.isEnabled = (!totalTopics.isEmpty() && !takenTopics.isEmpty() && !studiedTopics.isEmpty())
+        calculate.isEnabled = !totalTopics.isEmpty() && !takenTopics.isEmpty() && !studiedTopics.isEmpty()
+        take.isEnabled = !totalTopics.isEmpty() && !takenTopics.isEmpty()
     }
 
     companion object {
