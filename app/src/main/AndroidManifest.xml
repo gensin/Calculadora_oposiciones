@@ -19,8 +19,7 @@
         <activity android:name=".features.resultData.ResultActivity"/>
         <activity
             android:name=".features.taketopics.TakeTopicsActivity"
-            android:label="@string/title_activity_take_topics"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:label="@string/title_activity_take_topics">
         </activity>
     </application>
 

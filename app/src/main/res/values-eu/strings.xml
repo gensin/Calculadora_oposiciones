@@ -9,4 +9,5 @@
     <string name="calculate">kalkulatu</string>
     <string name="explanation">Adierazi zenbakia:</string>
     <string name="take_topics">Hartu gaiak</string>
+    <string name="title_activity_take_topics">Hartu ausazko irakasgaiak</string>
 </resources>

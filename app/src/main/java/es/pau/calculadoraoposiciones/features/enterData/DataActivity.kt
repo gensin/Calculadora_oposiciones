@@ -33,15 +33,25 @@ class DataActivity : AppCompatActivity() {
         studiedTopics.afterTextChanged { setButtonEnable() }
 
         take.setOnClickListener {
-            startActivity(Intent(this, TakeTopicsActivity::class.java))
+            onTakeTopicsClick()
         }
 
         setButtonEnable()
     }
 
+    private fun onTakeTopicsClick() {
+        val totalNum = totalTopics.getTextAsInt()
+        val takenNum = takenTopics.getTextAsInt()
+        prefs.totalPref = totalNum
+        prefs.takenPref = takenNum
+        startActivity(Intent(this, TakeTopicsActivity::class.java))
+    }
+
     override fun onResume() {
         super.onResume()
-        studiedTopics.setText(prefs.studiedPref.toString())
+        if (prefs.contains(prefs.STUDIED_SAVED)) {
+            studiedTopics.setText(prefs.studiedPref.toString())
+        }
     }
 
     private fun initializeData() {

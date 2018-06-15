@@ -9,4 +9,5 @@
     <string name="encourage">Best luck!</string>
     <string name="description">With this calculator you will know the probability do you have to take a topic you already studied.</string>
     <string name="take_topics">Take topics</string>
+    <string name="title_activity_take_topics">Take Random Topics</string>
 </resources>

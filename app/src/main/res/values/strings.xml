@@ -10,5 +10,5 @@
     <string name="percentage_symbol" translatable="false">%</string>
     <string name="percentage_temporal_number" translatable="false">100</string>
     <string name="take_topics">Saca temas</string>
-    <string name="title_activity_take_topics">TakeTopicsActivity</string>
+    <string name="title_activity_take_topics">Saca temas al azar</string>
 </resources>

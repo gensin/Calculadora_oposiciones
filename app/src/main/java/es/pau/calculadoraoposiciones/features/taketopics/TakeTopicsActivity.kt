@@ -21,7 +21,6 @@ class TakeTopicsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_take_topics)
-        setSupportActionBar(toolbar)
 
         sendTopics.setOnClickListener {
            //TODO("Enviar mail con topics")
@@ -44,6 +43,7 @@ class TakeTopicsActivity : AppCompatActivity() {
             createList()
         }
 
+        newTaken.setText(prefs.takenPref.toString())
         takeAgain.performClick()
         newTaken.hideKeyboard()
         newTaken.clearFocus()

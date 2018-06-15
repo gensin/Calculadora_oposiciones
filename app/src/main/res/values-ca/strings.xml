@@ -9,4 +9,5 @@
     <string name="calculate">Calcular</string>
     <string name="explanation">Indica el número d\':</string>
     <string name="take_topics">Treu temes</string>
+    <string name="title_activity_take_topics">Treu temes a l\'atzar</string>
 </resources>

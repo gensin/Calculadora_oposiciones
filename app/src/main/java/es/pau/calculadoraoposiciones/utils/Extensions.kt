@@ -61,7 +61,7 @@ fun ProgressBar.show() {
 
 // Maths
 fun ClosedRange<Int>.random() =
-        Random().nextInt(1 + endInclusive - start) +  start
+        Random().nextInt( (endInclusive - start) + 1) +  start
 
 
 // Adapter Extensions
