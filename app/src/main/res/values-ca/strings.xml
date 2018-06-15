@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Calculadora oposicions</string>
+    <string name="description">Amb aquesta calculadora podràs saber quina probabilitat tens de que et toqui un tema dels que t\'has estudiat en l\'oposició a la que et presents.</string>
+    <string name="encourage">Ànim i sort!</string>
+    <string name="total">De temes</string>
+    <string name="taken">Temes a triar</string>
+    <string name="studied">Temes estudiats</string>
+    <string name="calculate">Calcular</string>
+    <string name="explanation">Indica el número d\':</string>
+    <string name="take_topics">Treu temes</string>
+    <string name="title_activity_take_topics">Treu temes a l\'atzar</string>
+</resources>

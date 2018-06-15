@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Calculadora de oposicións</string>
+    <string name="description">Con esta calculadora poderás saber que probabilidade tes para ter un problema que teñas estudado na oposición á que che presentas.</string>
+    <string name="encourage">A coraxe ea sorte!</string>
+    <string name="total">Temas totais</string>
+    <string name="taken">Temas a escoller</string>
+    <string name="studied">Temas estudados</string>
+    <string name="calculate">Calcular</string>
+    <string name="explanation">Indique o número de:</string>
+    <string name="take_topics">Sacar temas</string>
+    <string name="title_activity_take_topics">Saque temas aleatorios</string>
+</resources>

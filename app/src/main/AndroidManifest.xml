@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="es.pau.calculadoraoposiciones">
+          package="es.pau.calculadoraoposiciones">
 
     <application
+        android:name=".features.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -10,12 +11,16 @@
         android:theme="@style/AppTheme">
         <activity android:name=".features.enterData.DataActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".features.resultData.ResultActivity"></activity>
+        <activity android:name=".features.resultData.ResultActivity"/>
+        <activity
+            android:name=".features.taketopics.TakeTopicsActivity"
+            android:label="@string/title_activity_take_topics">
+        </activity>
     </application>
 
 </manifest>
