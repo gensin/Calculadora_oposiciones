@@ -2,8 +2,8 @@ package es.pau.calculadoraoposiciones.features.taketopics
 
 import android.graphics.Color
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.LinearLayoutManager
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import android.view.inputmethod.EditorInfo
 import es.pau.calculadoraoposiciones.R
 import es.pau.calculadoraoposiciones.features.prefs

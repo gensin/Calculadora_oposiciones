@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
                                              xmlns:app="http://schemas.android.com/apk/res-auto"
                                              xmlns:tools="http://schemas.android.com/tools"
                                              android:id="@+id/relativeLayout"
@@ -31,7 +31,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"/>
 
-    <android.support.design.widget.TextInputLayout
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/totalTopicsLayout"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
@@ -51,9 +51,9 @@
             android:textAlignment="center"
             />
 
-    </android.support.design.widget.TextInputLayout>
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <android.support.design.widget.TextInputLayout
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/takenTopicsLayout"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
@@ -74,9 +74,9 @@
             android:textAlignment="center"
             />
 
-    </android.support.design.widget.TextInputLayout>
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <android.support.design.widget.TextInputLayout
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/studiedTopicsLayout"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
@@ -97,7 +97,7 @@
             android:textAlignment="center"
             />
 
-    </android.support.design.widget.TextInputLayout>
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/calculate"
@@ -133,4 +133,4 @@
         app:layout_constraintTop_toBottomOf="@+id/studiedTopicsLayout"
         app:layout_constraintVertical_bias="0.25"/>
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

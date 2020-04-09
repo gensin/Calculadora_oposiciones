@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Calculadora_oposiciones.iml" filepath="$PROJECT_DIR$/Calculadora_oposiciones.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/Calculadora_oposiciones-app.iml" filepath="$PROJECT_DIR$/app/Calculadora_oposiciones-app.iml" group="Calculadora_oposiciones/app" />
+      <module fileurl="file://$PROJECT_DIR$/StudioProjects-Calculadora_oposiciones.iml" filepath="$PROJECT_DIR$/StudioProjects-Calculadora_oposiciones.iml" group="Calculadora_oposiciones" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

@@ -2,7 +2,7 @@ package es.pau.calculadoraoposiciones.features.enterData
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.view.inputmethod.EditorInfo
 import es.pau.calculadoraoposiciones.R
 import es.pau.calculadoraoposiciones.features.prefs
